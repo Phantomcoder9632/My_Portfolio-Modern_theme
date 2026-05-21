@@ -106,28 +106,14 @@ export default function ExperiencePage() {
           <div className="container">
             <div style={{ position: "relative", maxWidth: "900px", margin: "0 auto" }}>
               {/* Center line */}
-              <div
-                style={{
-                  position: "absolute",
-                  left: "50%",
-                  top: 0,
-                  bottom: 0,
-                  width: "2px",
-                  background: `linear-gradient(to bottom, ${S.primary}, ${S.primaryFixed})`,
-                  transform: "translateX(-50%)",
-                }}
-              />
+              <div className="timeline-axis" />
 
               {experiences.map((exp, idx) => (
                 <div
                   key={exp.id}
+                  className="timeline-row"
                   style={{
-                    display: "grid",
-                    gridTemplateColumns: "1fr 56px 1fr",
-                    gap: "0",
-                    alignItems: "start",
                     marginBottom: idx < experiences.length - 1 ? "56px" : 0,
-                    position: "relative",
                   }}
                 >
                   {/* Left side */}
@@ -135,7 +121,7 @@ export default function ExperiencePage() {
                     /* Label on left, card on right */
                     <>
                       <ScrollReveal direction="left">
-                        <div style={{ paddingRight: "36px", textAlign: "right", paddingTop: "12px" }}>
+                        <div className="timeline-label-col">
                           <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "20px", fontWeight: 700, color: S.onSurface, marginBottom: "6px" }}>{exp.role}</h3>
                           <p style={{ fontSize: "14px", fontWeight: 600, color: exp.accentColor }}>{exp.institution}</p>
                           <p style={{ fontSize: "13px", color: S.outline, marginTop: "3px" }}>{exp.period}</p>
@@ -144,12 +130,16 @@ export default function ExperiencePage() {
                       </ScrollReveal>
 
                       {/* Center dot */}
-                      <div style={{ display: "flex", justifyContent: "center", paddingTop: "14px" }}>
-                        <div style={{ width: "18px", height: "18px", borderRadius: "50%", background: exp.accentColor, border: "3px solid #fff", boxShadow: `0 0 0 4px ${exp.accentColor}33`, zIndex: 2, position: "relative" }} />
-                      </div>
+                      <div
+                        className="timeline-dot-custom"
+                        style={{
+                          background: exp.accentColor,
+                          boxShadow: `0 0 0 4px ${exp.accentColor}33`,
+                        }}
+                      />
 
                       <ScrollReveal direction="right">
-                        <div style={{ paddingLeft: "36px" }}>
+                        <div className="timeline-card-col">
                           <div style={{ background: "#fff", border: `1px solid ${S.surfaceHigh}`, borderRadius: "14px", padding: "24px", boxShadow: "0 2px 12px rgba(0,35,175,0.07)", borderLeft: `4px solid ${exp.accentColor}` }}>
                             <ul style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "16px" }}>
                               {exp.contributions.map((c, j) => (
@@ -185,7 +175,7 @@ export default function ExperiencePage() {
                     /* Card on left, label on right */
                     <>
                       <ScrollReveal direction="left">
-                        <div style={{ paddingRight: "36px" }}>
+                        <div className="timeline-card-col left-side">
                           <div style={{ background: "#fff", border: `1px solid ${S.surfaceHigh}`, borderRadius: "14px", padding: "24px", boxShadow: "0 2px 12px rgba(0,35,175,0.07)", borderLeft: `4px solid ${exp.accentColor}` }}>
                             <ul style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "16px" }}>
                               {exp.contributions.map((c, j) => (
@@ -218,12 +208,16 @@ export default function ExperiencePage() {
                       </ScrollReveal>
 
                       {/* Center dot */}
-                      <div style={{ display: "flex", justifyContent: "center", paddingTop: "14px" }}>
-                        <div style={{ width: "18px", height: "18px", borderRadius: "50%", background: exp.accentColor, border: "3px solid #fff", boxShadow: `0 0 0 4px ${exp.accentColor}33`, zIndex: 2, position: "relative" }} />
-                      </div>
+                      <div
+                        className="timeline-dot-custom"
+                        style={{
+                          background: exp.accentColor,
+                          boxShadow: `0 0 0 4px ${exp.accentColor}33`,
+                        }}
+                      />
 
                       <ScrollReveal direction="right">
-                        <div style={{ paddingLeft: "36px", textAlign: "left", paddingTop: "12px" }}>
+                        <div className="timeline-label-col right-side">
                           <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "20px", fontWeight: 700, color: S.onSurface, marginBottom: "6px" }}>{exp.role}</h3>
                           <p style={{ fontSize: "14px", fontWeight: 600, color: exp.accentColor }}>{exp.institution}</p>
                           <p style={{ fontSize: "13px", color: S.outline, marginTop: "3px" }}>{exp.period}</p>

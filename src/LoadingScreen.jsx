@@ -165,7 +165,7 @@ export default function LoadingScreen({ onStarted }) {
           onClick={handleStartInteraction}
           style={{
             background: "rgba(0,0,0,0.6)", border: "1px solid #00f3ff",
-            padding: "20px 60px", color: "#00f3ff", fontSize: "1.2rem", letterSpacing: "4px",
+            padding: "20px clamp(20px, 8vw, 60px)", color: "#00f3ff", fontSize: "clamp(0.9rem, 4vw, 1.2rem)", letterSpacing: "clamp(2px, 1vw, 4px)",
             cursor: "pointer", borderRadius: "4px", textTransform: "uppercase",
             backdropFilter: "blur(10px)", boxShadow: "0 0 20px rgba(0, 243, 255, 0.1)"
           }}
@@ -185,7 +185,7 @@ export default function LoadingScreen({ onStarted }) {
             {/* HUD Content */}
             <div style={{ display: "flex", alignItems: "center", gap: "80px", zIndex: 10 }}>
                 {/* Tech List */}
-                <div style={{ display: "flex", flexDirection: "column", gap: "15px", alignItems: "flex-end" }}>
+                <div className="hide-mobile" style={{ display: "flex", flexDirection: "column", gap: "15px", alignItems: "flex-end" }}>
                     {techStack.map((tech, i) => (
                         <motion.div 
                             key={tech.id}
@@ -242,7 +242,7 @@ export default function LoadingScreen({ onStarted }) {
                 </div>
 
                 {/* Right Data Stream */}
-                <div style={{ width: "200px", textAlign: "left" }}>
+                <div className="hide-mobile" style={{ width: "200px", textAlign: "left" }}>
                     <div style={{ borderLeft: "2px solid #333", paddingLeft: "20px", height: "150px", display: "flex", flexDirection: "column", justifyContent: "center", gap: "10px" }}>
                         <div style={{ fontSize: "0.7rem", color: "#555", fontFamily: "monospace" }}>{`NEURAL_NET: ${progress > 50 ? "ACTIVE" : "SLEEP"}`}</div>
                         <div style={{ fontSize: "0.7rem", color: "#555", fontFamily: "monospace" }}>{`GPU_ACCEL: ${progress > 80 ? "READY" : "WAIT"}`}</div>
@@ -251,7 +251,7 @@ export default function LoadingScreen({ onStarted }) {
             </div>
 
             {/* Bottom Bar */}
-            <div style={{ position: "absolute", bottom: "10%", width: "40%", height: "2px", background: "#222" }}>
+            <div style={{ position: "absolute", bottom: "10%", width: "clamp(250px, 70%, 400px)", height: "2px", background: "#222" }}>
                 <motion.div 
                     style={{ height: "100%", background: "#00f3ff", boxShadow: "0 0 20px #00f3ff" }}
                     animate={{ width: `${progress}%` }}

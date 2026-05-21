@@ -71,14 +71,7 @@ export default function HomePage() {
           <div style={{ position: "absolute", bottom: "10%", left: "5%", width: "240px", height: "240px", borderRadius: "50%", background: S.secondary, opacity: 0.07, filter: "blur(60px)" }} />
 
           <div className="container" style={{ position: "relative", zIndex: 2 }}>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 420px",
-                gap: "60px",
-                alignItems: "center",
-              }}
-            >
+            <div className="hero-layout-grid">
               {/* Left: Text */}
               <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                 {/* Status pill */}

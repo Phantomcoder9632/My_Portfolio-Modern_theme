@@ -142,7 +142,7 @@ export default function SkillsPage() {
         <section style={{ padding: "64px 0", background: "#fff", borderBottom: `1px solid ${S.surfaceHigh}` }}>
           <div className="container">
             <SectionHeader eyebrow="Core Expertise" title="Artificial Intelligence & Machine Learning" icon="neurology" />
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px" }}>
+            <div className="grid-3" style={{ gap: "24px" }}>
               {/* Deep Learning */}
               <ScrollReveal>
                 <div style={{ background: "#fff", border: `1px solid ${S.surfaceHigh}`, borderRadius: "14px", padding: "24px", boxShadow: "0 2px 12px rgba(0,35,175,0.07)", height: "100%" }}>
@@ -199,7 +199,7 @@ export default function SkillsPage() {
         <section style={{ padding: "64px 0", background: S.surfaceLow, borderBottom: `1px solid ${S.surfaceHigh}` }}>
           <div className="container">
             <SectionHeader eyebrow="Remote Sensing" title="Geospatial Intelligence" icon="public" />
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px" }}>
+            <div className="grid-3" style={{ gap: "24px" }}>
               {geospatial.map((item, i) => (
                 <ScrollReveal key={item.title} delay={i * 80}>
                   <div style={{ background: "#fff", border: `1px solid ${S.surfaceHigh}`, borderRadius: "14px", padding: "24px", boxShadow: "0 2px 12px rgba(0,35,175,0.07)", display: "flex", flexDirection: "column", gap: "14px", height: "100%" }}>
@@ -221,10 +221,10 @@ export default function SkillsPage() {
         {/* 5G + Engineering */}
         <section style={{ padding: "64px 0", background: "#fff", borderBottom: `1px solid ${S.surfaceHigh}` }}>
           <div className="container">
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "56px" }}>
+            <div className="grid-2" style={{ gap: "56px" }}>
               <div>
                 <SectionHeader eyebrow="Telecommunications" title="5G & Signal Processing" icon="cell_tower" />
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+                <div className="grid-2" style={{ gap: "12px" }}>
                   {signal5g.map((item) => (
                     <div key={item.label} style={{ display: "flex", alignItems: "center", gap: "12px", padding: "14px 16px", background: S.surfaceLow, border: `1px solid ${S.surfaceHigh}`, borderRadius: "10px" }}>
                       <div style={{ width: "36px", height: "36px", borderRadius: "9999px", background: S.primaryFixed, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -265,10 +265,10 @@ export default function SkillsPage() {
         <section style={{ padding: "64px 0", background: S.surfaceLow }}>
           <div className="container">
             <ScrollReveal>
-              <div style={{ background: "#fff", border: `1px solid ${S.surfaceHigh}`, borderRadius: "20px", padding: "56px 48px", textAlign: "center", boxShadow: "0 4px 24px rgba(0,35,175,0.07)" }}>
+              <div className="capabilities-card">
                 <p className="eyebrow" style={{ marginBottom: "10px" }}>Academia</p>
                 <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "28px", fontWeight: 700, color: S.onSurface, marginBottom: "40px" }}>Research Capabilities</h2>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "32px" }}>
+                <div className="grid-3" style={{ gap: "32px" }}>
                   {research.map((item, i) => (
                     <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "12px" }}>
                       <div style={{ width: "56px", height: "56px", borderRadius: "16px", background: S.primaryFixed, display: "flex", alignItems: "center", justifyContent: "center" }}>

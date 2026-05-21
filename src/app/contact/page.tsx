@@ -113,7 +113,7 @@ export default function ContactPage() {
         {/* Main content */}
         <section style={{ padding: "64px 0", background: S.surfaceLow }}>
           <div className="container">
-            <div style={{ display: "grid", gridTemplateColumns: "5fr 7fr", gap: "40px", alignItems: "start" }}>
+            <div className="grid-5-7" style={{ gap: "40px" }}>
 
               {/* Left column */}
               <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                           </div>
                           <div>
                             <p style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: S.outline }}>{item.label}</p>
-                            <p style={{ fontSize: "13px", fontWeight: 500, color: S.onSurface, marginTop: "2px" }}>{item.value}</p>
+                            <p style={{ fontSize: "13px", fontWeight: 500, color: S.onSurface, marginTop: "2px", overflowWrap: "break-word", wordBreak: "break-word" }}>{item.value}</p>
                           </div>
                         </a>
                       ))}
@@ -197,7 +197,7 @@ export default function ContactPage() {
 
               {/* Right column: Contact form */}
               <ScrollReveal direction="right">
-                <div style={{ background: "#fff", border: `1px solid ${S.surfaceHigh}`, borderRadius: "20px", padding: "40px", boxShadow: "0 4px 24px rgba(0,35,175,0.08)", position: "relative", overflow: "hidden" }}>
+                <div className="contact-form-card">
                   {/* Decorative orb */}
                   <div style={{ position: "absolute", top: "-40px", right: "-40px", width: "140px", height: "140px", borderRadius: "50%", background: S.primaryFixed, opacity: 0.5, filter: "blur(40px)", pointerEvents: "none" }} />
 
@@ -221,7 +221,7 @@ export default function ContactPage() {
                   ) : (
                     <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "22px", position: "relative" }}>
                       {/* Name + Email row */}
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                      <div className="form-row">
                         <div>
                           <label style={{ display: "block", fontSize: "13px", fontWeight: 600, color: S.onSurfaceVariant, marginBottom: "6px" }}>Full Name *</label>
                           <input
